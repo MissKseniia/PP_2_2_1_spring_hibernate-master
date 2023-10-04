@@ -27,7 +27,6 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-
     public User getUserByCar(String model, int series) {
 
         String hql = "select user from User user join fetch user.car where user.car.model =: model and user.car.series =: series";
@@ -36,6 +35,5 @@ public class UserDaoImp implements UserDao {
         query.setParameter("series", series);
         return (User) query.getSingleResult();
     }
-
 
 }
